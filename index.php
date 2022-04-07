@@ -1,5 +1,7 @@
-<!DOCTYPE html>
+<!-- Développeur : GONNEAUD Alexis !-->
+<!-- Résumé : Serveur Web Raspberry PI (Projet : La Source) !-->
 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" async></script>
 </head>
-	
 <body>
   <div class="wrapper">
     <div class="img-area">
@@ -15,8 +16,7 @@
         <img src="https://toiledefond.net/wp-content/uploads/2013/12/xd3io-R-Pi_Logo.png" alt="">
       </div> 
     </div>
-    <div class="icon arrow"><i class="fas fa-arrow-left"></i></div>
-    <div class="icon dots"><i class="fas fa-ellipsis-v"></i></div>
+		
     <div class="name">Serveur Web Raspberry</div>
     <div class="about">Projet : La Source</div>
     <div class="buttons" id="div_buttons">
@@ -34,15 +34,15 @@
 			  <p id='p1'></p>
 		<h1>- -  KIT M5 Afficheur  - -</h1>
 		<h3>172.17.50.92 </h3>
-		<form action="172.17.50.92" method="get">
+		<form action="172.17.50.92" method="post">
 			<div
-      	<button id='b1'>Envoyer</button>
+      	<button type="button" onclick="sendData({OK})">Cliquez ici !</button>
+				<button id='b3'>Afficher l'heure</button>
 			</div>
 		</form>
-			  <button id='b2'>Annuler</button>
-        <button id='b3'>Afficher l'heure</button>
 
-			</body>
+        
+
 		<table>
 		<tr>
 			<th>Appareil</th>
@@ -71,18 +71,6 @@
 				echo "Votre ip : ";
     		echo $ip = $_SERVER['REMOTE_ADDR'];
 }
-
-$rsltPing = exec("ping 172.17.50.92", $output);
-while (list(,$val) = each($output)) :
-   $val = str_replace('ÿ','',$val);
-   $val = str_replace('ˆ','ê',$val);
-   $val = str_replace('‡','ç',$val);
-   $val = str_replace('“','ô',$val);
-   $val = str_replace('R,p','Rép',$val);
-    echo "<pre>$val</pre>";
-endwhile ;
-
-
 class UserInfo
 	{
 	private static function get_user_agent() 
@@ -211,4 +199,8 @@ class UserInfo
 	}
 
 }
+
 ?>
+
+</body>
+</html>

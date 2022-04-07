@@ -10,15 +10,7 @@ b3.addEventListener('click', afficheHeure);
 
 function message(){
 	var test = new XMLHttpRequest();
-  timeoutId = setTimeout(alert, 1000, 'Une requête GET a été envoyé');
-	
-}
-
-
-
-
-function stopDelai(){
-    clearTimeout(timeoutId);
+  alert, 1000, 'Une requête GET a été envoyé';	
 }
 
 function afficheHeure(){
@@ -27,3 +19,6 @@ function afficheHeure(){
         p1.innerHTML = d.toLocaleTimeString();
     }, 1000)
 }
+
+
+
